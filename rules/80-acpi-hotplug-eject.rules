@@ -1,0 +1,6 @@
+# Generic rules for handling ACPI hotplug eject.
+
+SUBSYSTEM=="*", ACTION=="change", ENV{EVENT}=="offline", ATTR{online}=="1", DEVPATH=="*", ATTR{online}="0"
+
+SUBSYSTEM=="*", ACTION=="change", ENV{EVENT}=="online", ATTR{online}=="0", DEVPATH=="*", ATTR{online}="1"
+
